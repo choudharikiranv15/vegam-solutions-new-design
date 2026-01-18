@@ -9,6 +9,25 @@ export default function Dashboard() {
     const stats = statsData?.data || { totalUsers: 0, activeUsers: 0, inactiveUsers: 0, roles: {} };
     const [hoveredRole, setHoveredRole] = React.useState(null);
 
+    const handleDownloadReport = () => {
+        const csvContent = "data:text/csv;charset=utf-8,"
+            + "Metric,Value\n"
+            + `Total Users,${stats.totalUsers}\n`
+            + `Active Users,${stats.activeUsers}\n`
+            + `Inactive Users,${stats.inactiveUsers}\n`
+            + `Admin Users,${stats.roles['Admin'] || 0}\n`
+            + `Manager Users,${stats.roles['Manager'] || 0}\n`
+            + `Standard Users,${stats.roles['Standard User'] || 0}\n`;
+
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "vegam_dashboard_report.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     // Calculate percentages for the donut chart
     const totalRoles = Object.values(stats.roles).reduce((a, b) => a + b, 0) || 1;
     const roleDistribution = [
@@ -26,11 +45,11 @@ export default function Dashboard() {
                     <p className="text-brand-500 dark:text-brand-400 mt-1">Welcome back, Admin! Here's what's happening today.</p>
                 </div>
                 <div className="flex gap-3">
-                    <button className="px-5 py-2.5 bg-white dark:bg-dark-card border border-brand-100 dark:border-brand-700 text-brand-600 dark:text-brand-300 rounded-xl hover:bg-brand-50 transition-colors text-sm font-medium shadow-sm">
+                    <button
+                        onClick={handleDownloadReport}
+                        className="px-5 py-2.5 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors text-sm font-medium shadow-lg shadow-brand-500/30 flex items-center gap-2"
+                    >
                         Download Report
-                    </button>
-                    <button className="px-5 py-2.5 bg-brand-600 text-white rounded-xl hover:bg-brand-700 transition-colors text-sm font-medium shadow-lg shadow-brand-500/30">
-                        Create Message
                     </button>
                 </div>
             </div>
