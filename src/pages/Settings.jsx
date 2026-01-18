@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card } from '../components/ui/Cards';
-import { User, Bell, Shield, Globe, Monitor, Moon, Volume2, Save } from 'lucide-react';
+import { User, Bell, Shield, Globe, Monitor, Moon, Volume2, Save, Settings as SettingsIcon } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 export default function Settings() {
@@ -139,7 +139,7 @@ export default function Settings() {
                         <Card className="flex items-center justify-center min-h-[300px] bg-brand-50/50 border-dashed border-2">
                             <div className="text-center">
                                 <div className="w-16 h-16 bg-brand-100 dark:bg-brand-800 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <Settings size={32} className="text-brand-500 animate-spin-slow" />
+                                    <SettingsIcon size={32} className="text-brand-500 animate-spin-slow" />
                                 </div>
                                 <h3 className="text-lg font-bold text-brand-900 dark:text-white">Coming Soon</h3>
                                 <p className="text-sm text-brand-500 max-w-xs mx-auto mt-2">

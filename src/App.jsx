@@ -32,17 +32,19 @@ function App() {
 
   // Sync URL to State
   useEffect(() => {
-    const path = location.pathname.substring(1) || 'dashboard'; // remove root slash
-    if (['dashboard', 'users', 'chat', 'analytics', 'transactions', 'portfolio', 'settings', 'profile', 'notifications'].includes(path)) {
-      setActiveTab(path);
-    } else {
+    // Get the first path segment (ignoring empty first split from leading slash)
+    const pathSegment = location.pathname.split('/').filter(Boolean)[0];
+
+    if (!pathSegment) {
       setActiveTab('dashboard');
+    } else if (['dashboard', 'users', 'chat', 'analytics', 'transactions', 'portfolio', 'settings', 'profile', 'notifications'].includes(pathSegment)) {
+      setActiveTab(pathSegment);
     }
+    // Removed the else block that forced reset to dashboard for unknown routes to prevent flickering/loops
   }, [location]);
 
   // Handle Tab Change (Sync State to URL)
   const handleTabChange = (tab) => {
-    setActiveTab(tab);
     navigate(tab === 'dashboard' ? '/' : `/${tab}`);
   };
 
