@@ -4,7 +4,24 @@ import Header from './Header';
 import { cn } from '../../lib/utils';
 
 export default function MainLayout({ children, activeTab, setActiveTab, isDarkMode, toggleTheme }) {
-    const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+    // Initialize based on screen width (Desktop = open, Mobile/Tablet = closed/collapsed)
+    const [isSidebarOpen, setIsSidebarOpen] = React.useState(
+        typeof window !== 'undefined' ? window.innerWidth >= 1024 : true
+    );
+
+    // Auto-handle resize
+    React.useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setIsSidebarOpen(true);
+            } else {
+                setIsSidebarOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className="flex h-screen w-full bg-gray-50 dark:bg-dark-bg transition-colors duration-300 overflow-hidden">
