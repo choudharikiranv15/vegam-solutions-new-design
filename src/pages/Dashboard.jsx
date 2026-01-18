@@ -7,6 +7,7 @@ import { useUserStats } from '../hooks/useUsers';
 export default function Dashboard() {
     const { data: statsData, isLoading } = useUserStats();
     const stats = statsData?.data || { totalUsers: 0, activeUsers: 0, inactiveUsers: 0, roles: {} };
+    const [hoveredRole, setHoveredRole] = React.useState(null);
 
     // Calculate percentages for the donut chart
     const totalRoles = Object.values(stats.roles).reduce((a, b) => a + b, 0) || 1;
@@ -75,7 +76,7 @@ export default function Dashboard() {
                 {/* Main Chart */}
                 <Card className="lg:col-span-2 min-h-[400px] flex flex-col" title="User Activity" subtitle="Overview of user engagement over the last 6 months">
                     <div className="flex-1 p-4 pb-2">
-                        <div className="relative w-full h-64">
+                        <div className="relative w-full h-full">
                             {/* Y-Axis Labels */}
                             <div className="absolute left-0 top-0 bottom-6 w-12 flex flex-col justify-between text-xs font-medium text-brand-300 dark:text-brand-600 z-10 select-none">
                                 <span className="-translate-y-1/2 text-right pr-3">100%</span>
@@ -163,15 +164,24 @@ export default function Dashboard() {
                                 style={{ transform: `rotate(${roleDistribution[0].percent * 3.6}deg)` }}
                             ></div>
                             <div className="text-center">
-                                <span className="block text-2xl font-bold text-brand-900 dark:text-white">{stats.totalUsers}</span>
-                                <span className="text-xs text-brand-500">Total Users</span>
+                                <span className="block text-2xl font-bold text-brand-900 dark:text-white transition-all duration-300">
+                                    {hoveredRole ? hoveredRole.val : stats.totalUsers}
+                                </span>
+                                <span className="text-xs text-brand-500 transition-all duration-300">
+                                    {hoveredRole ? hoveredRole.label : 'Total Users'}
+                                </span>
                             </div>
                         </div>
                     </div>
 
                     <div className="space-y-4 mt-6">
                         {roleDistribution.map((item, i) => (
-                            <div key={i} className="flex items-center justify-between p-3 rounded-xl transition-colors duration-200 hover:bg-brand-50 dark:hover:bg-brand-900/40 cursor-pointer group">
+                            <div
+                                key={i}
+                                onMouseEnter={() => setHoveredRole(item)}
+                                onMouseLeave={() => setHoveredRole(null)}
+                                className="flex items-center justify-between p-3 rounded-xl transition-colors duration-200 hover:bg-brand-50 dark:hover:bg-brand-900/40 cursor-pointer group"
+                            >
                                 <div className="flex items-center gap-3">
                                     <div className={`w-3 h-3 rounded-full ${item.color} shadow-sm ring-2 ring-white dark:ring-dark-card group-hover:ring-brand-100 dark:group-hover:ring-brand-800 transition-all`} />
                                     <span className="text-sm text-brand-700 dark:text-brand-300 font-medium group-hover:text-brand-900 dark:group-hover:text-white transition-colors">{item.label}</span>

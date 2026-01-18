@@ -36,7 +36,7 @@ export default function MainLayout({ children, activeTab, setActiveTab, isDarkMo
                 </div>
 
                 {/* Scrollable Content Area - Starts behind header but padded */}
-                <main className="absolute inset-0 overflow-y-auto overflow-x-hidden pt-24 px-6 md:px-8 lg:px-10 pb-6 scroll-smooth">
+                <main className="absolute inset-0 overflow-y-auto overflow-x-hidden pt-32 px-6 md:px-8 lg:px-10 pb-6 scroll-smooth">
                     {children}
                 </main>
 
