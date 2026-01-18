@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #f8fafc;
+    --text-main: #0f172a;
+    --card-bg: #ffffff;
+    --border-color: #e2e8f0;
+  }
+  
+  .dark {
+    --bg-main: #0F1219;
+    --text-main: #f8fafc;
+    --card-bg: #1A1E29; 
+    --border-color: #2A3042;
+  }
+  
+  body {
+    @apply bg-[var(--bg-main)] text-[var(--text-main)] font-sans antialiased overflow-hidden;
+  }
+
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md dark:bg-dark-surface/70;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-soft hover:-translate-y-1;
+  }
+}
