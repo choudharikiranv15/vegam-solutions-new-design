@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import MainLayout from './components/layout/MainLayout';
-import Dashboard from './pages/Dashboard';
-import Chat from './pages/Chat';
-import Users from './pages/Users';
-import Analytics from './pages/Analytics';
-import Profile from './pages/Profile';
-import Notifications from './pages/Notifications';
-import Transactions from './pages/Transactions';
-import Settings from './pages/Settings';
-import Portfolio from './pages/Portfolio';
+import ErrorBoundary from './components/ErrorBoundary';
 
-// Placeholder for other tabs
-const PlaceholderPage = ({ title }) => (
-  <div className="flex flex-col items-center justify-center min-h-[60vh] text-center animate-in fade-in zoom-in duration-500">
-    <div className="w-24 h-24 bg-brand-100 dark:bg-brand-900/30 rounded-full flex items-center justify-center mb-6">
-      <span className="text-4xl">🚧</span>
+// Lazy load pages for code splitting
+const Dashboard = lazy(() => import('./pages/Dashboard'));
+const Chat = lazy(() => import('./pages/Chat'));
+const Users = lazy(() => import('./pages/Users'));
+const Analytics = lazy(() => import('./pages/Analytics'));
+const Profile = lazy(() => import('./pages/Profile'));
+const Notifications = lazy(() => import('./pages/Notifications'));
+const Transactions = lazy(() => import('./pages/Transactions'));
+const Settings = lazy(() => import('./pages/Settings'));
+const Portfolio = lazy(() => import('./pages/Portfolio'));
+
+// Loading spinner component for Suspense fallback
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-[60vh]">
+    <div className="relative">
+      <div className="w-12 h-12 rounded-full border-4 border-brand-200 dark:border-brand-800"></div>
+      <div className="w-12 h-12 rounded-full border-4 border-brand-600 border-t-transparent animate-spin absolute top-0 left-0"></div>
     </div>
-    <h2 className="text-2xl font-bold text-brand-900 dark:text-white mb-2">{title}</h2>
-    <p className="text-brand-500 dark:text-brand-400 max-w-md">
-      This module is currently under development. Check back soon for updates!
-    </p>
   </div>
 );
 
@@ -85,14 +85,18 @@ function App() {
   };
 
   return (
-    <MainLayout
-      activeTab={activeTab}
-      setActiveTab={handleTabChange}
-      isDarkMode={isDarkMode}
-      toggleTheme={() => setIsDarkMode(!isDarkMode)}
-    >
-      {renderContent()}
-    </MainLayout>
+    <ErrorBoundary>
+      <MainLayout
+        activeTab={activeTab}
+        setActiveTab={handleTabChange}
+        isDarkMode={isDarkMode}
+        toggleTheme={() => setIsDarkMode(!isDarkMode)}
+      >
+        <Suspense fallback={<PageLoader />}>
+          {renderContent()}
+        </Suspense>
+      </MainLayout>
+    </ErrorBoundary>
   );
 }
 

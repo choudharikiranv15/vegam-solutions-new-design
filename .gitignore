@@ -23,3 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 Internship_Technical_Assessment.pdf
+
+# Test output and coverage
+coverage
+test-output.txt
+test-results.txt
+*.test-results.json
+
+# Claude AI settings
+.claude
