@@ -31,7 +31,7 @@
 
 ## 🎯 Overview
 
-**Vegam Solutions Admin Dashboard** is a modern, responsive, and feature-rich admin panel designed for managing users, analytics, transactions, and more. Built with cutting-edge technologies, it offers a seamless user experience with dark mode support, real-time updates, and comprehensive testing coverage.
+**Vegam Solutions Admin Dashboard** is a modern, responsive, and feature-rich admin panel built for Vegam Solutions to manage users, analytics, transactions, and more. Developed with cutting-edge technologies, it offers a seamless user experience with dark mode support, real-time updates, and comprehensive testing coverage.
 
 ### ✨ Key Highlights
 
@@ -397,10 +397,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Vegam Solutions Team**
+**Kiran Choudhari**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Website: [vegamsolutions.com](#)
+Developed for Vegam Solutions
+
+- LinkedIn: [Kiran Choudhari](https://www.linkedin.com/in/kiranchoudhari-1510m)
+- GitHub: [@choudharikiranv15](https://github.com/choudharikiranv15)
 
 ---
 
@@ -418,6 +420,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### ⭐ Star this repository if you find it helpful!
 
-Made with ❤️ by Vegam Solutions Team
+Made with ❤️ by [Kiran Choudhari](https://www.linkedin.com/in/kiranchoudhari-1510m)
 
 </div>
