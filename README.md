@@ -9,7 +9,7 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4.17-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-[Live Demo](#) | [Documentation](#-table-of-contents) | [Report Bug](#)
+[Live Demo](https://admin-analytics-dashboard-design.vercel.app/) | [Documentation](#-table-of-contents)
 
 </div>
 
