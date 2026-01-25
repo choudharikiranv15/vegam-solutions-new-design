@@ -8,7 +8,7 @@ export default function Profile() {
     const [profile, setProfile] = useState({
         firstName: 'Admin',
         lastName: 'User',
-        email: 'admin@vegam.com',
+        email: 'admin@company.com',
         role: 'Administrator',
         phone: '+1 (555) 123-4567',
         location: 'San Francisco, CA',

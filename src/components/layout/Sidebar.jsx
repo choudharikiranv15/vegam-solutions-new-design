@@ -26,7 +26,7 @@ export default function Sidebar({ activeTab, setActiveTab, isOpen, setIsOpen }) 
                     </div>
                     <span className={cn("font-bold text-xl tracking-tight whitespace-nowrap opacity-100 transition-opacity drop-shadow-sm text-brand-900 dark:text-white",
                         !isOpen && "md:hidden lg:block hidden")}>
-                        Vegam
+                        Dashboard
                     </span>
                 </div>
             </div>

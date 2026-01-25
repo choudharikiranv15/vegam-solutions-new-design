@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Vegam Solutions - Admin Dashboard
+# Admin Dashboard
 
 ### A Modern, Feature-Rich Admin Dashboard Built with React
 
@@ -9,13 +9,13 @@
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4.17-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-[Live Demo](https://vegam-solutions-dashboard.vercel.app/) • [Documentation](#-table-of-contents) • [Report Bug](https://github.com/yourusername/vegam-solutions/issues)
+[Live Demo](#) | [Documentation](#-table-of-contents) | [Report Bug](#)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -29,75 +29,75 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
-**Vegam Solutions Admin Dashboard** is a modern, responsive, and feature-rich admin panel built for Vegam Solutions to manage users, analytics, transactions, and more. Developed with cutting-edge technologies, it offers a seamless user experience with dark mode support, real-time updates, and comprehensive testing coverage.
+**Admin Dashboard** is a modern, responsive, and feature-rich admin panel designed to manage users, analytics, transactions, and more. Built with cutting-edge technologies, it offers a seamless user experience with dark mode support, real-time updates, and comprehensive testing coverage.
 
-### ✨ Key Highlights
+### Key Highlights
 
-- 🎨 **Beautiful UI/UX** - Modern design with smooth animations and transitions
-- 🌓 **Dark Mode** - Fully functional dark/light theme toggle with system preference detection
-- 📱 **Responsive Design** - Works flawlessly on desktop, tablet, and mobile devices
-- ⚡ **Performance Optimized** - Code splitting, lazy loading, and optimized bundle size
-- 🧪 **Well Tested** - Comprehensive test coverage with Vitest and React Testing Library
-- 🔒 **Error Handling** - Robust error boundaries and user-friendly error messages
+- **Beautiful UI/UX** - Modern design with smooth animations and transitions
+- **Dark Mode** - Fully functional dark/light theme toggle with system preference detection
+- **Responsive Design** - Works flawlessly on desktop, tablet, and mobile devices
+- **Performance Optimized** - Code splitting, lazy loading, and optimized bundle size
+- **Well Tested** - Comprehensive test coverage with Vitest and React Testing Library
+- **Error Handling** - Robust error boundaries and user-friendly error messages
 
 ---
 
-## 🌟 Features
+## Features
 
-### 📊 Dashboard
+### Dashboard
 - Real-time statistics and metrics
 - Interactive charts and graphs (User Activity, Role Distribution)
 - Quick action cards for common tasks
 - Recent activity feed
 
-### 👥 User Management
+### User Management
 - Complete CRUD operations for users
 - Advanced filtering and search capabilities
 - Role-based access control
 - Bulk actions (export, delete)
 - Pagination with customizable page sizes
 
-### 💬 Chat Interface
+### Chat Interface
 - Real-time messaging simulation
 - Contact list with search
 - Message history
 - Typing indicators
 - File attachment support
 
-### 📈 Analytics
+### Analytics
 - Comprehensive data visualization
 - Performance metrics
 - User engagement tracking
 - Custom date range filtering
 
-### 💰 Transactions
+### Transactions
 - Transaction history with detailed views
 - Status tracking (Completed, Pending, Failed)
 - Export functionality
 - Advanced filtering options
 
-### 📂 Portfolio
+### Portfolio
 - Project showcase
 - Category-based filtering
 - Detailed project views
 - Status management
 
-### 🔔 Notifications
+### Notifications
 - Real-time notification system
 - Categorized notifications (System, User, Transaction)
 - Mark as read/unread
 - Notification preferences
 
-### ⚙️ Settings
+### Settings
 - Profile customization
 - Security settings
 - Notification preferences
 - Theme customization
 - Account management
 
-### 👤 Profile
+### Profile
 - User profile management
 - Avatar upload
 - Personal information editing
@@ -106,7 +106,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Technologies
 
@@ -145,7 +145,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -159,8 +159,8 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/vegam-solutions.git
-cd vegam-solutions
+git clone https://github.com/yourusername/admin-dashboard.git
+cd admin-dashboard
 ```
 
 2. **Install dependencies**
@@ -197,10 +197,10 @@ Navigate to `http://localhost:5173` to view the application.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-vegam-solutions/
+admin-dashboard/
 ├── public/                    # Static assets
 │   ├── mockServiceWorker.js  # MSW service worker
 │   └── vite.svg              # Vite logo
@@ -254,7 +254,7 @@ vegam-solutions/
 
 ---
 
-## 🧪 Testing
+## Testing
 
 This project maintains high code quality with comprehensive test coverage.
 
@@ -273,11 +273,11 @@ npm run test:coverage
 
 ### Test Coverage
 
-- ✅ **ErrorBoundary** - 6 tests
-- ✅ **Cards Component** - 7 tests
-- ✅ **Modal Component** - 6 tests
-- ✅ **useUsers Hook** - 8 tests
-- ✅ **API Service** - 11 tests
+- **ErrorBoundary** - 6 tests
+- **Cards Component** - 7 tests
+- **Modal Component** - 6 tests
+- **useUsers Hook** - 8 tests
+- **API Service** - 11 tests
 
 **Total: 38 tests** | **Pass Rate: 100%**
 
@@ -290,7 +290,7 @@ npm run test:coverage
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 ### Deploy to Vercel
 
@@ -336,12 +336,12 @@ Create a `.env` file in the root directory:
 
 ```env
 VITE_API_BASE_URL=your_api_url_here
-VITE_APP_NAME=Vegam Solutions
+VITE_APP_NAME=Admin Dashboard
 ```
 
 ---
 
-## 🎨 Customization
+## Customization
 
 ### Theme Configuration
 
@@ -370,7 +370,7 @@ module.exports = {
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -389,24 +389,22 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Kiran Choudhari**
-
-Developed for Vegam Solutions
 
 - LinkedIn: [Kiran Choudhari](https://www.linkedin.com/in/kiranchoudhari-1510m)
 - GitHub: [@choudharikiranv15](https://github.com/choudharikiranv15)
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [React](https://react.dev/) - The amazing UI library
 - [Vite](https://vitejs.dev/) - Next generation frontend tooling
@@ -418,8 +416,8 @@ Developed for Vegam Solutions
 
 <div align="center">
 
-### ⭐ Star this repository if you find it helpful!
+### Star this repository if you find it helpful!
 
-Made with ❤️ by [Kiran Choudhari](https://www.linkedin.com/in/kiranchoudhari-1510m)
+Made with care by [Kiran Choudhari](https://www.linkedin.com/in/kiranchoudhari-1510m)
 
 </div>

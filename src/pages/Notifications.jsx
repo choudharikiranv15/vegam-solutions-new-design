@@ -8,7 +8,7 @@ export default function Notifications() {
         { id: 1, type: 'success', title: 'Payment Received', message: 'Invoice #2024-001 has been settled successfully.', time: '2 mins ago', read: false },
         { id: 2, type: 'warning', title: 'Server Load High', message: 'CPU usage is above 90% for the last 5 minutes.', time: '1 hour ago', read: false },
         { id: 3, type: 'info', title: 'New User Signup', message: 'James Bond has joined the workspace via invite link.', time: '3 hours ago', read: true },
-        { id: 4, type: 'info', title: 'System Update', message: 'Vegam v2.1.0 has been deployed. Refresh for new features.', time: '1 day ago', read: true },
+        { id: 4, type: 'info', title: 'System Update', message: 'Dashboard v2.1.0 has been deployed. Refresh for new features.', time: '1 day ago', read: true },
         { id: 5, type: 'alert', title: 'Subscription Expiring', message: 'Your Premium plan expires in 3 days. Renew now to avoid interruption.', time: '2 days ago', read: false },
     ]);
 
