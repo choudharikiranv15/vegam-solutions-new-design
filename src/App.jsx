@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react"
 import MainLayout from './components/layout/MainLayout';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -96,6 +96,7 @@ function App() {
           {renderContent()}
         </Suspense>
       </MainLayout>
+      <VercelAnalytics />
     </ErrorBoundary>
   );
 }
